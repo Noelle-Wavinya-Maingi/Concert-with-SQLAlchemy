@@ -12,4 +12,5 @@ class Event(Base):
     location = Column(String)
     description = Column(String)
 
-    
+    #Define the relationship with bookings
+    bookings = relationship('Booking', back_populates = 'event')
