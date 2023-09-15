@@ -9,7 +9,7 @@ class User(Base):
     username = Column(String, unique = True, nullable = False)
     email = Column(String, unique = True, nullable = False)
     password = Column(String, nullable = False)
-    # role_id = Column(Integer,ForeignKey(roles.role_id))
+    role_id = Column(Integer,ForeignKey("roles.role_id"))
 
 # Define the relationships
     role = relationship('Role', back_populates = 'users')
